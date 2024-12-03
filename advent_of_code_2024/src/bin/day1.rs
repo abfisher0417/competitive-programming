@@ -3,7 +3,7 @@ use std::fs;
 
 fn read_input() -> (Vec<i32>, Vec<i32>) {
     // FIXME: Handle hardcoding of input.txt
-    let input = fs::read_to_string("input.txt").unwrap();
+    let input = fs::read_to_string("input_data/day1.txt").unwrap();
     let mut vec1 = Vec::new();
     let mut vec2 = Vec::new();
 

@@ -51,7 +51,7 @@ fn are_levels_safe(levels: &Vec<i32>) -> bool {
 }
 
 fn main() -> io::Result<()> {
-    let f = File::open("input.txt")?;
+    let f = File::open("input_data/day2.txt")?;
     let reader = BufReader::new(f);
     let mut safe_reports = 0;
 
