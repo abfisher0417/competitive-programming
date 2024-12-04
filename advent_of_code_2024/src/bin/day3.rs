@@ -27,6 +27,7 @@ impl<'a> Parser<'a> {
         if end > self.input.len() {
             return false;
         }
+        // The following line is likely not preferred due to https://doc.rust-lang.org/book/ch08-02-strings.html#indexing-into-strings
         if &self.input[start..end] == slice {
             self.position = end;
             true
