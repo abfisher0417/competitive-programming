@@ -1,9 +1,9 @@
+use std::fs::File;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
-use std::fs::File;
 
-// A more Rust idiomatic solution can be found at https://www.reddit.com/r/adventofcode/comments/1h4ncyr/comment/m01tlgb/
+// A more Rust idiomatic solution can be found at
 
 fn is_vec_increasing(vec: &Vec<i32>, skip_idx: Option<usize>) -> bool {
     let mut prev: Option<i32> = None;
@@ -58,7 +58,8 @@ fn main() -> io::Result<()> {
     for line in reader.lines() {
         match line {
             Ok(line) => {
-                let levels_arr = line.split_whitespace()
+                let levels_arr = line
+                    .split_whitespace()
                     .map(|s| s.parse::<i32>().unwrap())
                     .collect::<Vec<i32>>();
                 if are_levels_safe(&levels_arr) {

@@ -11,20 +11,24 @@ fn part1(input: &Vec<Vec<char>>) -> usize {
         [(-1, -1), (-2, -2), (-3, -3)],
         [(1, 1), (2, 2), (3, 3)],
         [(-1, 1), (-2, 2), (-3, 3)],
-        [(1, -1), (2, -2), (3, -3)]
+        [(1, -1), (2, -2), (3, -3)],
     ];
 
     let mut num_xmas = 0;
     let grid_y_len = input.len() as isize;
     let grid_x_len = input[0].len() as isize;
 
-    for i in 0..grid_y_len { // y-axis of input
-        for j in 0..grid_x_len { // x-axis of input
+    for i in 0..grid_y_len {
+        // y-axis of input
+        for j in 0..grid_x_len {
+            // x-axis of input
             if input[i as usize][j as usize] != 'X' {
                 continue;
             }
-            for k in 0..direction_tuples.len() { // iterate through each direction tuple list
-                for l in 0..direction_tuples[k].len() { // iterate through each direction tuple
+            for k in 0..direction_tuples.len() {
+                // iterate through each direction tuple list
+                for l in 0..direction_tuples[k].len() {
+                    // iterate through each direction tuple
                     let (x, y) = direction_tuples[k][l];
                     let new_i = i + y;
                     let new_j = j + x;
@@ -53,8 +57,10 @@ fn part2(input: &Vec<Vec<char>>) -> usize {
     let grid_x_len = input[0].len() as isize;
     let offsets = vec![(-1, 1), (1, -1), (-1, -1), (1, 1)];
     let mut matches = 0;
-    for i in 0..grid_y_len { // y-axis of input
-        for j in 0..grid_x_len { // x-axis of input
+    for i in 0..grid_y_len {
+        // y-axis of input
+        for j in 0..grid_x_len {
+            // x-axis of input
             if input[i as usize][j as usize] == 'A' {
                 let mut other_chars: [i32; 4] = [-2, -2, -2, -2];
                 for (idx, (x, y)) in offsets.iter().enumerate() {
@@ -82,10 +88,7 @@ fn main() {
     let input: Vec<Vec<char>> = fs::read_to_string("input_data/day4.txt")
         .expect("Could not read file")
         .lines()
-        .map(|line| {
-            line.chars()
-                .collect()
-        })
+        .map(|line| line.chars().collect())
         .collect();
 
     println!("Part 1: {}", part1(&input));

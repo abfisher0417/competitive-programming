@@ -38,7 +38,9 @@ impl<'a> Parser<'a> {
 
     fn parse_number(&mut self) -> Option<isize> {
         let start = self.position;
-        while self.position < self.input.len() && self.input.chars().nth(self.position).unwrap().is_digit(10) {
+        while self.position < self.input.len()
+            && self.input.chars().nth(self.position).unwrap().is_digit(10)
+        {
             self.position += 1;
         }
         self.input[start..self.position].parse::<isize>().ok()
